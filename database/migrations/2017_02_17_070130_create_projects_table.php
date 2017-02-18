@@ -17,6 +17,7 @@ class CreateProjectsTable extends Migration
             $table->increments('id');
             $table->text('name');
             $table->boolean('status');
+            $table->integer('quantity_students');
             $table->timestamps();
         });
     }
