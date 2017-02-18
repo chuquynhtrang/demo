@@ -17,3 +17,4 @@ mix.copy('node_modules/sb-admin-2/dist/css/sb-admin-2.css', 'public/css/');
 mix.copy('node_modules/sb-admin-2/dist/js/sb-admin-2.js', 'public/js/');
 mix.copy('node_modules/font-awesome/css/font-awesome.css', 'public/css/');
 mix.copy('node_modules/font-awesome/fonts', 'public/fonts');
+mix.copy('node_modules/datatables/media/css/jquery.dataTables.css', 'public/css/');
