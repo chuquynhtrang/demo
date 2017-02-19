@@ -24,6 +24,7 @@
 </head>
 <body>
     <div id="app">
+        @if (Auth::user())
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -34,14 +35,12 @@
                 </button>
                 <a class="navbar-brand" href="">Graduation management</a>
             </div>
-
             @include('layouts.partials.navbar')
             @include('layouts.partials.sidebar')
         </nav>
+        @endif
 
-        <div id="page-wrapper">
-            @yield('content')
-        </div>
+        @yield('content')
     </div>
 
     <!-- Scripts -->

@@ -13,7 +13,12 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
+                background-image: url("images/bg.jpg");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                width: 100%;
+                height: 100%;
                 color: #636b6f;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
@@ -47,12 +52,14 @@
 
             .title {
                 font-size: 84px;
+                color: #fff;
+                font-weight: 700;
             }
 
             .links > a {
-                color: #636b6f;
+                color: #fff;
                 padding: 0 25px;
-                font-size: 12px;
+                font-size: 14px;
                 font-weight: 600;
                 letter-spacing: .1rem;
                 text-decoration: none;
@@ -79,15 +86,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    Graduation Management
                 </div>
             </div>
         </div>

@@ -19,4 +19,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
+Route::get('/profile/{user}', 'UserController@show');
+
 Route::resource('/subjects', 'SubjectController');

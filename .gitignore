@@ -6,3 +6,6 @@
 /.idea
 Homestead.json
 Homestead.yaml
+public/fonts/
+public/css/
+public/js/

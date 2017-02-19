@@ -17,6 +17,7 @@
   "dependencies": {
     "datatables": "^1.10.13",
     "font-awesome": "^4.7.0",
-    "metismenu": "^2.6.2"
+    "metismenu": "^2.6.2",
+    "sb-admin-2": "^3.3.8"
   }
 }
