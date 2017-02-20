@@ -25,3 +25,5 @@ Route::put('/profile/{user}', 'UserController@update');
 Route::resource('/subjects', 'SubjectController');
 
 Route::resource('/groups', 'GroupController');
+
+Route::resource('/councils', 'CouncilController');

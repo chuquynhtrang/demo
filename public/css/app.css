@@ -8329,3 +8329,7 @@ button.close {
 .table-panel {
   background-color: #757575 !important;
 }
+
+#page-wrapper {
+  background-color: #F5F5F5 !important;
+}
