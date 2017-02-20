@@ -11,4 +11,21 @@ class UserController extends Controller
     {
     	return view('users.profile', compact('user'));
     }
+
+    public function update(Request $request, $id)
+    {
+    	$user = User::findOrFail($id);
+
+    	if ($request->hasFile('avatar')) {
+    		$avatar = $request->file('avatar');
+            $filename = $avatar->getClientOriginalName();
+            $request->file('avatar')->move(public_path() . '/uploads/avatar/', $filename);
+            $user->avatar = $filename;
+    	}
+
+    	$request = $request->only('name', 'address', 'phone', 'email');
+    	$user->save($request);
+
+    	return redirect('/profile/'.$user->id)->withSuccess('Update Profile Successfully');
+    }
 }

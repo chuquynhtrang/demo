@@ -22,7 +22,7 @@ class SubjectController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required',
+            'name' => 'required|unique:subjects',
         ]);
 
         $subject = new Subject();
@@ -61,7 +61,7 @@ class SubjectController extends Controller
         }
 
         $this->validate($request, [
-            'name' => 'required',
+            'name' => 'required|unique:subjects',
         ]);
 
         $request = $request->only('name');

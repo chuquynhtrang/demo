@@ -26,4 +26,11 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    protected $appends = ['url_avatar'];
+
+    public function getUrlAvatarAttribute()
+    {
+        return config('user.path_to_avatar') . $this->avatar;
+    }
 }

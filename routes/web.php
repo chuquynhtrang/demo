@@ -20,5 +20,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 Route::get('/profile/{user}', 'UserController@show');
+Route::put('/profile/{user}', 'UserController@update');
 
 Route::resource('/subjects', 'SubjectController');
+
+Route::resource('/groups', 'GroupController');

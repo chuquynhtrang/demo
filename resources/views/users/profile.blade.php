@@ -12,10 +12,12 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                 <div class="row">
-                    <form method="PUT" class="form-horizontal">
+                    <form method="POST" class="form-horizontal" enctype="multipart/form-data" action="{{ url('/profile/'. $user->id) }}">
+                        {{csrf_field()}}
+                        <input name="_method" type="hidden" value="PUT">
                         <div class="col-md-4 col-sm-6 col-xs-12">
                             <div class="text-center">
-                                <img id="show_avatar" src="{{$user->avatar}}"> 
+                                <img id="show_avatar" src="{{ $user->url_avatar }}"> 
                                 <h6> Choose avatar </h6>
                                 <input type="file" name="avatar" class="text-center center-block well well-sm">
                             </div>
@@ -30,7 +32,7 @@
                                 <label for="name" class="col-lg-3 control-label">
                                     Name
                                 </label>
-                                <div class="col-lg-8 input-group"> 
+                                <div class="col-lg-8 input-group">
                                     <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
                                     <input type="text" name="name" value="{{$user->name}}" class="form-control" autofocus="autofocus">
                                 </div>
@@ -62,7 +64,7 @@
                                 </label>
                                 <div class="col-lg-8 input-group">
                                     <span class="input-group-addon"><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
-                                    <input type="text" name="mail" value="{{$user->mail}}" class="form-control">
+                                    <input type="text" name="email" value="{{$user->email}}" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group">
