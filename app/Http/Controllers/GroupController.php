@@ -29,7 +29,7 @@ class GroupController extends Controller
         $name = $request->only('name');
         $group->create($name);
 
-        return redirect()->action('GroupController@index')->withSuccess('Create Group Successfully!');
+        return redirect()->action('GroupController@index')->withSuccess('Create Class Successfully!');
     }
 
 
@@ -39,7 +39,7 @@ class GroupController extends Controller
 
         if (!$group) {
             return redirect()->action('GroupController@index')
-                ->withErrors(['message' => 'Not found group']);
+                ->withErrors(['message' => 'Not found class']);
         }
 
         return view('groups.edit')->with(
@@ -57,7 +57,7 @@ class GroupController extends Controller
 
         if (!$group) {
             return redirect()->action('GroupController@index')
-                ->withErrors(['message' => 'Not found group']);
+                ->withErrors(['message' => 'Not found class']);
         }
 
         $this->validate($request, [
@@ -67,7 +67,7 @@ class GroupController extends Controller
         $request = $request->only('name');
         $group->update($request);
 
-        return redirect()->action('GroupController@index')->withSuccess('Update Group Successfully!');
+        return redirect()->action('GroupController@index')->withSuccess('Update Class Successfully!');
     }
 
     public function destroy($id)
@@ -76,11 +76,11 @@ class GroupController extends Controller
 
         if (!$group) {
             return redirect()->action('GroupController@index')
-                ->withErrors(['message' => 'Not found group']);
+                ->withErrors(['message' => 'Not found class']);
         }
 
         $group->delete();
 
-        return redirect()->action('GroupController@index')->withSuccess('Delete Group Successfully!');
+        return redirect()->action('GroupController@index')->withSuccess('Delete Class Successfully!');
     }
 }

@@ -8,7 +8,7 @@
                     <label for="name">Name: </label>
                     <input class="form-control" id="input-name" value="{{ isset($subject) ? $subject->name : '' }}" name="name">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-danger">Submit</button>
             </form>
         </div>
     </div>

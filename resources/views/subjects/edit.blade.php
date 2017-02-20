@@ -7,9 +7,12 @@
 	        <h1 class="page-header">Subjects</h1>
 	    </div>
 	    <!-- /.col-lg-12 -->
+
 	    <div class="row">
 		    <div class="col-lg-6">
-		        <div class="panel panel-default">
+			 	@include('layouts.partials.errors')
+			    @include('layouts.partials.success')
+		        <div class="panel panel-primary">
 		            <div class="panel-heading">
 		                Edit Subject
 		            </div>
