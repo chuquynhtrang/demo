@@ -15,6 +15,7 @@
     <link href="{{ asset('css/sb-admin-2.css') }}" rel="stylesheet">
     <link href="{{ asset('css/font-awesome.css') }}" rel="stylesheet">
     <link href="{{ asset('css/jquery.dataTables.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/user.css') }}" rel="stylesheet">
     <!-- Scripts -->
     <script>
         window.Laravel = {!! json_encode([
@@ -25,7 +26,7 @@
 <body>
     <div id="app">
         @if (Auth::user())
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>

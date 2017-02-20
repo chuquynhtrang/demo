@@ -15,7 +15,7 @@
                     <form method="PUT" class="form-horizontal">
                         <div class="col-md-4 col-sm-6 col-xs-12">
                             <div class="text-center">
-                                <input type="image" id="show_avatar" value="{{$user->avatar}}"> 
+                                <img id="show_avatar" src="{{$user->avatar}}"> 
                                 <h6> Choose avatar </h6>
                                 <input type="file" name="avatar" class="text-center center-block well well-sm">
                             </div>

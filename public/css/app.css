@@ -8316,3 +8316,8 @@ button.close {
     display: none !important;
   }
 }
+
+.navbar-brand {
+  color: #fff !important;
+  font-weight: 600;
+}

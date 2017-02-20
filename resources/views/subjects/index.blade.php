@@ -9,9 +9,28 @@
         <!-- /.col-lg-12 -->
     </div>
 
+    @include('layouts.partials.errors')
+    @include('layouts.partials.success')
+
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Create Subject
+                </div>
+                @include('subjects._form', [
+                    'action' => url('/subjects'),
+                    'input' => '',
+                ])
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
     <div class="row">
         <div class="col-lg-12">
-            <div class="panel panel-default">
+            <div class="panel panel-primary">
                 <div class="panel-heading">
                     DataTables Advanced Tables
                 </div>
@@ -36,10 +55,14 @@
                                     <td>{{ $subject->created_at }}</td>
                                     <td>{{ $subject->updated_at }}</td>
                                     <td>
-                                        <a href="{{ action('SubjectController@create') }}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
+                                        <a href="{{ action('SubjectController@edit', $subject->id) }}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
                                     </td>
                                     <td>
-                                        <a href="#" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+                                        <form method="POST" action="{{ url('/subjects/' . $subject->id) }}">
+                                            {{csrf_field()}}
+                                            <input name="_method" type="hidden" value="DELETE">
+                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure delete?')"><i class="fa fa-trash"></i></button>
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach

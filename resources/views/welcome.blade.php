@@ -65,6 +65,9 @@
                 text-decoration: none;
                 text-transform: uppercase;
             }
+            .links :hover {
+                    color: #f9423a;
+                }
 
             .m-b-md {
                 margin-bottom: 30px;
