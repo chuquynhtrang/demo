@@ -17,7 +17,7 @@
                         <input name="_method" type="hidden" value="PUT">
                         <div class="col-md-4 col-sm-6 col-xs-12">
                             <div class="text-center">
-                                <img id="show_avatar" src="{{ $user->url_avatar }}"> 
+                                <img id="show_avatar" src="../{{ $user->url_avatar }}"> 
                                 <h6> Choose avatar </h6>
                                 <input type="file" name="avatar" class="text-center center-block well well-sm">
                             </div>

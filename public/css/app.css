@@ -8321,3 +8321,11 @@ button.close {
   color: #fff !important;
   font-weight: 600;
 }
+
+.sidebar {
+  margin-top: 2px !important;
+}
+
+.table-panel {
+  background-color: #757575 !important;
+}

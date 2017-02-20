@@ -13,7 +13,7 @@
 			 	@include('layouts.partials.errors')
 			    @include('layouts.partials.success')
 		        <div class="panel panel-primary">
-		            <div class="panel-heading">
+		            <div class="panel-heading table-panel">
 		                Edit Subject
 		            </div>
 	    			@include('subjects._form')
