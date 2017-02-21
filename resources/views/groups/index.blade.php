@@ -19,7 +19,7 @@
                     Create Class
                 </div>
                 @include('groups._form', [
-                    'action' => url('/groups'),
+                    'action' => url('/admin/groups'),
                     'input' => '',
                 ])
             </div>
@@ -55,10 +55,10 @@
                                     <td>{{ $group->created_at }}</td>
                                     <td>{{ $group->updated_at }}</td>
                                     <td>
-                                        <a href="{{ action('GroupController@edit', $group->id) }}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
+                                        <a href="{{ url('/admin/groups/' . $group->id . '/edit') }}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
                                     </td>
                                     <td>
-                                        <form method="POST" action="{{ url('/groups/' . $group->id) }}">
+                                        <form method="POST" action="{{ url('/admin/groups/' . $group->id) }}">
                                             {{csrf_field()}}
                                             <input name="_method" type="hidden" value="DELETE">
                                             <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure delete?')"><i class="fa fa-trash"></i></button>

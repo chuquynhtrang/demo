@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Models\council;
 
 class CouncilController extends Controller
@@ -29,7 +30,7 @@ class CouncilController extends Controller
         $name = $request->only('name');
         $council->create($name);
 
-        return redirect()->action('CouncilController@index')->withSuccess('Create Council Successfully!');
+        return redirect('/admin/councils')->withSuccess('Create Council Successfully!');
     }
 
 
@@ -38,14 +39,14 @@ class CouncilController extends Controller
         $council = Council::find($id);
 
         if (!$council) {
-            return redirect()->action('CouncilController@index')
+            return redirect('/admin/councils')
                 ->withErrors(['message' => 'Not found council']);
         }
 
         return view('councils.edit')->with(
             [
                 'council' => $council,
-                'action' => url('/councils/'. $council->id),
+                'action' => url('admin/councils/'. $council->id),
                 'input' => '<input name="_method" type="hidden" value="PUT">',
             ]
         );
@@ -56,7 +57,7 @@ class CouncilController extends Controller
         $council = Council::find($id);
 
         if (!$council) {
-            return redirect()->action('CouncilController@index')
+            return redirect('/admin/councils')
                 ->withErrors(['message' => 'Not found council']);
         }
 
@@ -67,7 +68,7 @@ class CouncilController extends Controller
         $request = $request->only('name');
         $council->update($request);
 
-        return redirect()->action('CouncilController@index')->withSuccess('Update Council Successfully!');
+        return redirect('/admin/councils')->withSuccess('Update Council Successfully!');
     }
 
     public function destroy($id)
@@ -75,12 +76,12 @@ class CouncilController extends Controller
         $council = Council::find($id);
 
         if (!$council) {
-            return redirect()->action('CouncilController@index')
+            return redirect('/admin/councils')
                 ->withErrors(['message' => 'Not found class']);
         }
 
         $council->delete();
 
-        return redirect()->action('CouncilController@index')->withSuccess('Delete Council Successfully!');
+        return redirect('/admin/councils')->withSuccess('Delete Council Successfully!');
     }
 }

@@ -19,7 +19,7 @@
                     Create Subject
                 </div>
                 @include('subjects._form', [
-                    'action' => url('/subjects'),
+                    'action' => url('/admin/subjects'),
                     'input' => '',
                 ])
             </div>
@@ -55,10 +55,10 @@
                                     <td>{{ $subject->created_at }}</td>
                                     <td>{{ $subject->updated_at }}</td>
                                     <td>
-                                        <a href="{{ action('SubjectController@edit', $subject->id) }}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
+                                        <a href="{{ url('/admin/subjects/' . $subject->id .'/edit') }}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
                                     </td>
                                     <td>
-                                        <form method="POST" action="{{ url('/subjects/' . $subject->id) }}">
+                                        <form method="POST" action="{{ url('admin/subjects/' . $subject->id) }}">
                                             {{csrf_field()}}
                                             <input name="_method" type="hidden" value="DELETE">
                                             <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure delete?')"><i class="fa fa-trash"></i></button>

@@ -19,7 +19,7 @@
                     Create Council
                 </div>
                 @include('councils._form', [
-                    'action' => url('/councils'),
+                    'action' => url('/admin/councils'),
                     'input' => '',
                 ])
             </div>
@@ -55,10 +55,10 @@
                                     <td>{{ $council->created_at }}</td>
                                     <td>{{ $council->updated_at }}</td>
                                     <td>
-                                        <a href="{{ action('CouncilController@edit', $council->id) }}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
+                                        <a href="{{ url('/admin/councils/' . $council->id . '/edit') }}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
                                     </td>
                                     <td>
-                                        <form method="POST" action="{{ url('/councils/' . $council->id) }}">
+                                        <form method="POST" action="{{ url('admin/councils/' . $council->id) }}">
                                             {{csrf_field()}}
                                             <input name="_method" type="hidden" value="DELETE">
                                             <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure delete?')"><i class="fa fa-trash"></i></button>

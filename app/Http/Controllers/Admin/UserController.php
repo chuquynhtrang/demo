@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Http\Controllers\Controller;
 
 class UserController extends Controller
 {
@@ -26,6 +27,6 @@ class UserController extends Controller
     	$request = $request->only('name', 'address', 'phone', 'email');
     	$user->save($request);
 
-    	return redirect('/profile/'.$user->id)->withSuccess('Update Profile Successfully');
+    	return redirect('/admin/profile/'.$user->id)->withSuccess('Update Profile Successfully');
     }
 }

@@ -17,13 +17,15 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::group(['middleware' => 'admin', 'prefix' => 'admin', 'namespace' => 'Admin'], function() {
+	Route::get('/', 'AdminController@index');
 
-Route::get('/profile/{user}', 'UserController@show');
-Route::put('/profile/{user}', 'UserController@update');
+	Route::get('/profile/{user}', 'UserController@show');
+	Route::put('/profile/{user}', 'UserController@update');
 
-Route::resource('/subjects', 'SubjectController');
+	Route::resource('/subjects', 'SubjectController');
 
-Route::resource('/groups', 'GroupController');
+	Route::resource('/groups', 'GroupController');
 
-Route::resource('/councils', 'CouncilController');
+	Route::resource('/councils', 'CouncilController');
+});

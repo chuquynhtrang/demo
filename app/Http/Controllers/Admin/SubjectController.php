@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Models\Subject;
+use App\Http\Controllers\Controller;
 
 class SubjectController extends Controller
 {
@@ -29,7 +30,7 @@ class SubjectController extends Controller
         $name = $request->only('name');
         $subject->create($name);
 
-        return redirect()->action('SubjectController@index')->withSuccess('Create Subject Successfully!');
+        return redirect('/admin/subjects')->withSuccess('Create Subject Successfully!');
     }
 
 
@@ -38,14 +39,14 @@ class SubjectController extends Controller
         $subject = Subject::find($id);
 
         if (!$subject) {
-            return redirect()->action('SubjectController@index')
+            return redirect('/admin/subjects')
                 ->withErrors(['message' => 'Not found subject']);
         }
 
         return view('subjects.edit')->with(
             [
                 'subject' => $subject,
-                'action' => url('/subjects/'. $subject->id),
+                'action' => url('/admin/subjects/'. $subject->id),
                 'input' => '<input name="_method" type="hidden" value="PUT">',
             ]
         );
@@ -67,7 +68,7 @@ class SubjectController extends Controller
         $request = $request->only('name');
         $subject->update($request);
 
-        return redirect()->action('SubjectController@index')->withSuccess('Update Subject Successfully!');
+        return redirect('/admin/subjects')->withSuccess('Update Subject Successfully!');
     }
 
     public function destroy($id)
@@ -75,12 +76,12 @@ class SubjectController extends Controller
         $subject = Subject::find($id);
 
         if (!$subject) {
-            return redirect()->action('SubjectController@index')
+            return redirect('/admin/subjects')
                 ->withErrors(['message' => 'Not found subject']);
         }
 
         $subject->delete();
 
-        return redirect()->action('SubjectController@index')->withSuccess('Delete Subject Successfully!');
+        return redirect('/admin/subjects')->withSuccess('Delete Subject Successfully!');
     }
 }

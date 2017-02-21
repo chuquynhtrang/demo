@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Models\Group;
+use App\Http\Controllers\Controller;
 
 class GroupController extends Controller
 {
@@ -29,7 +30,7 @@ class GroupController extends Controller
         $name = $request->only('name');
         $group->create($name);
 
-        return redirect()->action('GroupController@index')->withSuccess('Create Class Successfully!');
+        return redirect('/admin/groups')->withSuccess('Create Class Successfully!');
     }
 
 
@@ -38,14 +39,14 @@ class GroupController extends Controller
         $group = Group::find($id);
 
         if (!$group) {
-            return redirect()->action('GroupController@index')
+            return redirect('/admin/groups')
                 ->withErrors(['message' => 'Not found class']);
         }
 
         return view('groups.edit')->with(
             [
                 'group' => $group,
-                'action' => url('/groups/'. $group->id),
+                'action' => url('/admin/groups/'. $group->id),
                 'input' => '<input name="_method" type="hidden" value="PUT">',
             ]
         );
@@ -56,7 +57,7 @@ class GroupController extends Controller
         $group = Group::find($id);
 
         if (!$group) {
-            return redirect()->action('GroupController@index')
+            return redirect('/admin/groups')
                 ->withErrors(['message' => 'Not found class']);
         }
 
@@ -67,7 +68,7 @@ class GroupController extends Controller
         $request = $request->only('name');
         $group->update($request);
 
-        return redirect()->action('GroupController@index')->withSuccess('Update Class Successfully!');
+        return redirect('/admin/groups')->withSuccess('Update Class Successfully!');
     }
 
     public function destroy($id)
@@ -75,12 +76,12 @@ class GroupController extends Controller
         $group = Group::find($id);
 
         if (!$group) {
-            return redirect()->action('GroupController@index')
+            return redirect('/admin/groups')
                 ->withErrors(['message' => 'Not found class']);
         }
 
         $group->delete();
 
-        return redirect()->action('GroupController@index')->withSuccess('Delete Class Successfully!');
+        return redirect('/admin/groups')->withSuccess('Delete Class Successfully!');
     }
 }
