@@ -20,12 +20,22 @@ Auth::routes();
 Route::group(['middleware' => 'admin', 'prefix' => 'admin', 'namespace' => 'Admin'], function() {
 	Route::get('/', 'AdminController@index');
 
-	Route::get('/profile/{user}', 'UserController@show');
-	Route::put('/profile/{user}', 'UserController@update');
+	Route::get('/profile/{user}', 'UserController@profile');
+	Route::put('/profile/{user}', 'UserController@updateProfile');
 
 	Route::resource('/subjects', 'SubjectController');
 
 	Route::resource('/groups', 'GroupController');
 
 	Route::resource('/councils', 'CouncilController');
+
+	Route::get('/users/{role}', 'UserController@index');
+});
+
+Route::group(['middleware' => 'staff', 'prefix' => 'staff', 'namespace' => 'Staff'], function() {
+	Route::get('/', 'StaffController@index');
+});
+
+Route::group(['prefix' => 'user', 'namespace' => 'User'], function() {
+	Route::get('/', 'UserController@index');
 });

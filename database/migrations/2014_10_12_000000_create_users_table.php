@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
             $table->integer('group_id')->nullable();
             $table->integer('council_id')->nullable();
             $table->integer('role')->nullable();
+            $table->integer('position')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

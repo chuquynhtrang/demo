@@ -16,8 +16,8 @@ class CreateProjectsTable extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->increments('id');
             $table->text('name');
-            $table->boolean('status');
-            $table->integer('quantity_students');
+            $table->text('description');
+            $table->integer('teacher_id'); //de tai cua giang vien nao
             $table->timestamps();
         });
     }

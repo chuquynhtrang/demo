@@ -43,7 +43,7 @@ class CouncilController extends Controller
                 ->withErrors(['message' => 'Not found council']);
         }
 
-        return view('councils.edit')->with(
+        return view('admin.councils.edit')->with(
             [
                 'council' => $council,
                 'action' => url('admin/councils/'. $council->id),

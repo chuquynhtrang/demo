@@ -43,7 +43,7 @@ class SubjectController extends Controller
                 ->withErrors(['message' => 'Not found subject']);
         }
 
-        return view('subjects.edit')->with(
+        return view('admin.subjects.edit')->with(
             [
                 'subject' => $subject,
                 'action' => url('/admin/subjects/'. $subject->id),

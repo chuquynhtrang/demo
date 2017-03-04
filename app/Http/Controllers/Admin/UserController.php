@@ -9,18 +9,24 @@ use Cloudder;
 
 class UserController extends Controller
 {
-    public function show(User $user)
+    public function index($role)
+    {
+        $users = User::where('role', $role)->get();
+
+        return view('admin.users.index', compact('users'));
+    }
+
+    public function profile(User $user)
     {
     	return view('users.profile', compact('user'));
     }
 
-    public function update(Request $request, $id)
+    public function updateProfile(Request $request, $id)
     {
     	$user = User::findOrFail($id);
 
     	if ($request->hasFile('avatar')) {
             $filename = $request->avatar;
-            // dd(Cloudder::getPublicId());
             Cloudder::upload($filename, config('common.path_cloud_avatar') . $user->email);
             $user->avatar = Cloudder::getResult()['url'];
         }

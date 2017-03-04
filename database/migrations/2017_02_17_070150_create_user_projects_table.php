@@ -13,13 +13,12 @@ class CreateUserProjectsTable extends Migration
      */
     public function up()
     {
+        //dang ki de tai
         Schema::create('user_projects', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
             $table->integer('project_id');
-            $table->boolean('status');
-            $table->integer('progress');
-            $table->text('document');
+            $table->integer('status'); //1 cho phe duyet, 2 da dang ki
             $table->timestamps();
         });
     }

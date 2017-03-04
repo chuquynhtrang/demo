@@ -16,7 +16,9 @@ class CreateDiariesTable extends Migration
         Schema::create('diaries', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
+            $table->integer('progress');
             $table->text('note');
+            $table->text('document'); //day tai lieu len he thong
             $table->timestamps();
         });
     }

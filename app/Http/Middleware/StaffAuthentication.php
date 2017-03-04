@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
-class TeacherAuthentication
+class StaffAuthentication
 {
     /**
      * Handle an incoming request.
@@ -16,7 +16,7 @@ class TeacherAuthentication
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::check() && Auth::user()->isTeacher()) {
+        if (Auth::check() && Auth::user()->isStaff()) {
             return $next($request);
         } else {
             return redirect('/');

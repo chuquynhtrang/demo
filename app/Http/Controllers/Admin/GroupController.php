@@ -43,7 +43,7 @@ class GroupController extends Controller
                 ->withErrors(['message' => 'Not found class']);
         }
 
-        return view('groups.edit')->with(
+        return view('admin.groups.edit')->with(
             [
                 'group' => $group,
                 'action' => url('/admin/groups/'. $group->id),

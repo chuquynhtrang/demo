@@ -12,34 +12,50 @@
                 </div>
                 <!-- /input-group -->
             </li>
-             <li>
-                <a href="{{ url('/admin') }}"><i class="fa fa-area-chart fa-fw"></i>Dashboard</a>
-            </li>
-            <li>
-                <a href="{{ url('/admin/subjects') }}"><i class="fa fa-bookmark fa-fw"></i>Subjects Managerment</a>
-            </li>
-            <li>
-                <a href="{{ url('/admin/groups') }}"><i class="fa fa-building fa-fw"></i>Classes Managerment</a>
-            </li>
-            <li>
-                <a href="#"><i class="fa fa-user-circle fa-fw"></i>User Managerment<span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level">
-                    <li>
-                        <a href="#">Students</a>
-                    </li>
-                    <li>
-                        <a href="#">Teacher</a>
-                    </li>
-                    <li>
-                        <a href="#">Admin</a>
-                    </li>
-                    <li>
-                </ul>
-                <!-- /.nav-second-level -->
-            </li>
-            <li>
-                <a href="{{ url('/admin/councils') }}"><i class="fa fa-users fa-fw"></i>Councils Managerment</a>
-            </li>
+            @if (Auth::user()->isAdmin())
+                <li>
+                    <a href="{{ url('/admin') }}"><i class="fa fa-area-chart fa-fw"></i>&nbsp;&nbsp;Thống kê</a>
+                </li>
+                <li>
+                    <a href="{{ url('/admin/subjects') }}"><i class="fa fa-bookmark fa-fw"></i>&nbsp;&nbsp;Quản lý bộ môn</a>
+                </li>
+                <li>
+                    <a href="{{ url('/admin/groups') }}"><i class="fa fa-building fa-fw"></i>&nbsp;&nbsp;Quản lý lớp học</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-user-circle fa-fw"></i>&nbsp;&nbsp;Quản lý người dùng<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="{{ url('admin/users/0') }}">Sinh viên</a>
+                        </li>
+                        <li>
+                            <a href="{{ url('admin/users/2') }}">Giảng viên</a>
+                        </li>
+                        <li>
+                            <a href="{{ url('admin/users/1') }}">Admin</a>
+                        </li>
+                        <li>
+                    </ul>
+                    <!-- /.nav-second-level -->
+                </li>
+                <li>
+                    <a href="{{ url('#') }}"><i class="fa fa-building fa-fw"></i>&nbsp;&nbsp;Quản lý đề tài</a>
+                </li>
+                <li>
+                    <a href="{{ url('/admin/councils') }}"><i class="fa fa-users fa-fw"></i>&nbsp;&nbsp;Quản lý hội đồng bảo vệ</a>
+                </li>
+            @elseif (Auth::user()->isStaff())
+            @else
+                <li>
+                    <a href="{{ url('#') }}"><i class="fa fa-area-chart fa-fw"></i>&nbsp;&nbsp;Đăng kí đề tài</a>
+                </li>
+                <li>
+                    <a href="{{ url('#') }}"><i class="fa fa-bookmark fa-fw"></i>&nbsp;&nbsp;Danh sách sinh viên</a>
+                </li>
+                <li>
+                    <a href="{{ url('#') }}"><i class="fa fa-building fa-fw"></i>&nbsp;&nbsp;Hội đồng bảo vệ</a>
+                </li>
+            @endif
         </ul>
     </div>
     <!-- /.sidebar-collapse -->
