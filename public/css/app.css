@@ -8317,6 +8317,10 @@ button.close {
   }
 }
 
+body {
+  font-family: Arial;
+}
+
 .navbar-brand {
   color: #fff !important;
   font-weight: 600;
@@ -8326,10 +8330,20 @@ button.close {
   margin-top: 2px !important;
 }
 
-.table-panel {
-  background-color: #757575 !important;
+#page-wrapper {
+  background-color: #FAFAFA !important;
 }
 
-#page-wrapper {
-  background-color: #F5F5F5 !important;
+.nav li a {
+  color: #337ab7;
+  font-size: 16px;
+}
+
+.panel-primary {
+  border-color: #d3e0e9;
+}
+
+table.dataTable thead th,
+table.dataTable.no-footer {
+  border-bottom: 1px solid #d3e0e9 !important;
 }

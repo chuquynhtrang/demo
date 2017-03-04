@@ -3,7 +3,7 @@
         <li style="margin-right: 50px; color: #fff;">Welcome, {{ Auth::user()->name }}</li>
         <li class="dropdown" id="link_profile">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                <img src="{{Auth::user()->url_avatar}}" id="profile_avatar"><i class="fa fa-caret-down"></i>
+                <img src="{{Auth::user()->avatar}}" id="profile_avatar"><i class="fa fa-caret-down"></i>
             </a>
             <ul class="dropdown-menu dropdown-user">
                 <li><a href="{{ url('/admin/profile', Auth::user()->id) }}"><i class="fa fa-user fa-fw"></i> User Profile</a>

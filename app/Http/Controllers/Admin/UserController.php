@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Http\Controllers\Controller;
+use Cloudder;
 
 class UserController extends Controller
 {
@@ -18,11 +19,11 @@ class UserController extends Controller
     	$user = User::findOrFail($id);
 
     	if ($request->hasFile('avatar')) {
-    		$avatar = $request->file('avatar');
-            $filename = $avatar->getClientOriginalName();
-            $request->file('avatar')->move(public_path() . '/uploads/avatar/', $filename);
-            $user->avatar = $filename;
-    	}
+            $filename = $request->avatar;
+            // dd(Cloudder::getPublicId());
+            Cloudder::upload($filename, config('common.path_cloud_avatar') . $user->email);
+            $user->avatar = Cloudder::getResult()['url'];
+        }
 
     	$request = $request->only('name', 'address', 'phone', 'email');
     	$user->save($request);

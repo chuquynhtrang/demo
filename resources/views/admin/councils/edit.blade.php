@@ -4,7 +4,7 @@
 <div id="page-wrapper">
 	<div class="row">
 	    <div class="col-lg-12">
-	        <h1 class="page-header">Subjects</h1>
+	        <h1 class="page-header">Councils</h1>
 	    </div>
 
 	    <!-- /.col-lg-12 -->
@@ -14,9 +14,9 @@
 			    @include('layouts.partials.success')
 		        <div class="panel panel-primary">
 		            <div class="panel-heading table-panel">
-		                Edit Class
+		                Edit Council
 		            </div>
-	    			@include('groups._form')
+	    			@include('admin.councils._form')
 	    		</div>
 	    	</div>
     	</div>

@@ -4,7 +4,7 @@
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Classes</h1>
+            <h1 class="page-header">Councils</h1>
         </div>
         <!-- /.col-lg-12 -->
     </div>
@@ -14,12 +14,12 @@
 
     <div class="row">
         <div class="col-lg-6">
-            <div class="panel panel-primary">
+            <div class="panel panel-default">
                 <div class="panel-heading table-panel">
-                    Create Class
+                    Create Council
                 </div>
-                @include('groups._form', [
-                    'action' => url('/admin/groups'),
+                @include('admin.councils._form', [
+                    'action' => url('/admin/councils'),
                     'input' => '',
                 ])
             </div>
@@ -30,9 +30,9 @@
 
     <div class="row">
         <div class="col-lg-12">
-            <div class="panel panel-primary">
+            <div class="panel panel-default">
                 <div class="panel-heading table-panel">
-                    DataTables Advanced Tables
+                    Council Tables
                 </div>
                 <!-- /.panel-heading -->
                 <div class="panel-body">
@@ -48,17 +48,17 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($groups as $group)
+                            @foreach ($councils as $council)
                                 <tr>
-                                    <td>{{ $group->id }}</td>
-                                    <td>{{ $group->name }}</td>
-                                    <td>{{ $group->created_at }}</td>
-                                    <td>{{ $group->updated_at }}</td>
+                                    <td>{{ $council->id }}</td>
+                                    <td>{{ $council->name }}</td>
+                                    <td>{{ $council->created_at }}</td>
+                                    <td>{{ $council->updated_at }}</td>
                                     <td>
-                                        <a href="{{ url('/admin/groups/' . $group->id . '/edit') }}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
+                                        <a href="{{ url('/admin/councils/' . $council->id . '/edit') }}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
                                     </td>
                                     <td>
-                                        <form method="POST" action="{{ url('/admin/groups/' . $group->id) }}">
+                                        <form method="POST" action="{{ url('admin/councils/' . $council->id) }}">
                                             {{csrf_field()}}
                                             <input name="_method" type="hidden" value="DELETE">
                                             <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure delete?')"><i class="fa fa-trash"></i></button>

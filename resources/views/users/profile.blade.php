@@ -12,12 +12,12 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                 <div class="row">
-                    <form method="POST" class="form-horizontal" enctype="multipart/form-data" action="{{ url('/profile/'. $user->id) }}">
+                    <form method="POST" class="form-horizontal" enctype="multipart/form-data" action="{{ url('admin/profile/'. $user->id) }}">
                         {{csrf_field()}}
                         <input name="_method" type="hidden" value="PUT">
                         <div class="col-md-4 col-sm-6 col-xs-12">
                             <div class="text-center">
-                                <img id="show_avatar" src="../../{{ $user->url_avatar }}"> 
+                                <img id="show_avatar" src="{{ $user->avatar }}">
                                 <h6> Choose avatar </h6>
                                 <input type="file" name="avatar" class="text-center center-block well well-sm">
                             </div>
@@ -71,7 +71,7 @@
                                 <div class="col-lg-3"></div>
                                 <div class="col-lg-8">
                                     <button type="submit" class="btn btn-primary btn-md">Update Profile</button>
-                                    <a href="{{ url('/home') }}" class="btn btn-default">Cancel</a>
+                                    <a href="{{ url('/admin') }}" class="btn btn-default">Cancel</a>
                                 </div>
                             </div>
                         </div>

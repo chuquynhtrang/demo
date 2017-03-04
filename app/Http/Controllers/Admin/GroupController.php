@@ -12,7 +12,7 @@ class GroupController extends Controller
     {
     	$groups = Group::all();
 
-    	return view('groups.index', compact('groups'));
+    	return view('admin.groups.index', compact('groups'));
     }
 
     public function create()

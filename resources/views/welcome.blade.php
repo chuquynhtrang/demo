@@ -81,8 +81,8 @@
                     @if (Auth::check())
                         @if (Auth::user()->isAdmin())
                             <a href="{{ url('/admin') }}">Home</a>
-                        @elseif (Auth::user()->isTeacher())
-                            <a href="{{ url('/teacher') }}">Home</a>
+                        @elseif (Auth::user()->isStaff())
+                            <a href="{{ url('/staff') }}">Home</a>
                         @else
                             <a href="{{ url('user') }}">Home</a>
                         @endif

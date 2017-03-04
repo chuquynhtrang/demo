@@ -12,7 +12,7 @@ class CouncilController extends Controller
     {
     	$councils = Council::all();
 
-    	return view('councils.index', compact('councils'));
+    	return view('admin.councils.index', compact('councils'));
     }
 
     public function create()

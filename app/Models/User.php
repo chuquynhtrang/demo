@@ -9,7 +9,7 @@ class User extends Authenticatable
 {
     use Notifiable;
     const ROLE_ADMIN = 1;
-    const ROLE_TEACHER = 2;
+    const ROLE_STAFF = 2;
     const ROLE_USER = 0;
 
     /**
@@ -30,20 +30,13 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    protected $appends = ['url_avatar'];
-
-    public function getUrlAvatarAttribute()
-    {
-        return config('user.path_to_avatar') . $this->avatar;
-    }
-
     public function isAdmin()
     {
         return $this->role == User::ROLE_ADMIN;
     }
 
-    public function isTeacher()
+    public function isStaff()
     {
-        return $this->role == User::ROLE_TEACHER;
+        return $this->role == User::ROLE_STAFF;
     }
 }
