@@ -13,13 +13,7 @@
     @include('layouts.partials.success')
 
     <div class="row">
-        <div class="col-lg-6">
-            <div class="panel panel-default">
-                <div class="panel-heading table-panel">
-                    Create Subject
-                </div>
-            </div>
-        </div>
+        <a href="{{ url('admin/users/'.$role.'/create')}}" class="btn btn-success btn-md">Create User</a>
     </div>
 
     <hr>
@@ -36,9 +30,9 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
+                                <th>Avatar</th>
                                 <th>Name</th>
-                                <th>Created At</th>
-                                <th>Updated At</th>
+                                <th>Details</th>
                                 <th>Edit</th>
                                 <th>Delete</th>
                             </tr>
@@ -47,9 +41,13 @@
                             @foreach ($users as $user)
                                 <tr>
                                     <td>{{ $user->id }}</td>
+                                    <td>
+                                        <a href="{{url('/admin') }}"><img src="{{ $user->avatar }}"  class="user_avatar"></a>
+                                    </td>
                                     <td>{{ $user->name }}</td>
-                                    <td>{{ $user->created_at }}</td>
-                                    <td>{{ $user->updated_at }}</td>
+                                    <td>
+                                        <a href="" class="btn btn-default btn-sm"><i class="fa fa-info-circle"></i>&nbsp;View</a>
+                                        </td>
                                     <td>
                                         <a href="" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
                                     </td>

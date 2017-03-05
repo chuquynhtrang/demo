@@ -13,7 +13,12 @@ class UserController extends Controller
     {
         $users = User::where('role', $role)->get();
 
-        return view('admin.users.index', compact('users'));
+        return view('admin.users.index', compact('users', 'role'));
+    }
+
+    public function create($role)
+    {
+        return view('admin.users.create', compact('role'));
     }
 
     public function profile(User $user)

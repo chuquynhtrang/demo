@@ -30,6 +30,7 @@ Route::group(['middleware' => 'admin', 'prefix' => 'admin', 'namespace' => 'Admi
 	Route::resource('/councils', 'CouncilController');
 
 	Route::get('/users/{role}', 'UserController@index');
+	Route::get('/users/{role}/create', 'UserController@create');
 });
 
 Route::group(['middleware' => 'staff', 'prefix' => 'staff', 'namespace' => 'Staff'], function() {

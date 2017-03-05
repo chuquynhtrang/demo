@@ -39,7 +39,7 @@
                     <!-- /.nav-second-level -->
                 </li>
                 <li>
-                    <a href="{{ url('#') }}"><i class="fa fa-building fa-fw"></i>&nbsp;&nbsp;Quản lý đề tài</a>
+                    <a href="{{ url('#') }}"><i class="fa fa-book fa-fw"></i>&nbsp;&nbsp;Quản lý đề tài</a>
                 </li>
                 <li>
                     <a href="{{ url('/admin/councils') }}"><i class="fa fa-users fa-fw"></i>&nbsp;&nbsp;Quản lý hội đồng bảo vệ</a>
