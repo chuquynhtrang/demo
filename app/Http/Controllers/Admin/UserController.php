@@ -21,6 +21,24 @@ class UserController extends Controller
         return view('admin.users.create', compact('role'));
     }
 
+    public function store(Request $request, $role)
+    {
+        // dd($request->name);
+        // $request = $request->only('name', 'email', 'address', 'phone', 'course', 'group');
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = bcrypt('123456');
+        $user->address = $request->address;
+        $user->phone = $request->phone;
+        $user->course_id = $request->course;
+        $user->role = 0;
+        $user->group_id = $request->group;
+        $user->save();
+
+        return redirect('/admin/users/'. $role . 'index')->withSuccess('Create User Successfully!');
+    }
+
     public function profile(User $user)
     {
     	return view('users.profile', compact('user'));

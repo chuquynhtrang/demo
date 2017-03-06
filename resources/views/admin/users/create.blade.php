@@ -9,14 +9,20 @@
 
 	    <!-- /.col-lg-12 -->
 	    <div class="row">
-		    <div class="col-lg-6">
+		    <div class="col-lg-10 col-lg-offset-1">
 			 	@include('layouts.partials.errors')
 			    @include('layouts.partials.success')
 		        <div class="panel panel-default">
 		            <div class="panel-heading table-panel">
 		                Create User
 		            </div>
-	    			@include('admin.users._form')
+		            @if($role == 0)
+	    				@include('admin.users._form_student')
+	    			@elseif($role == 1)
+	    				@include('admin.users._form_admin')
+	    			@else
+	    				@include('admin.users_form_teacher')
+	    			@endif
 	    		</div>
 	    	</div>
     	</div>
