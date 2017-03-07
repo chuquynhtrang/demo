@@ -13,7 +13,7 @@
     @include('layouts.partials.success')
 
     <div class="row">
-        <a href="{{ url('admin/users/'.$role.'/create')}}" class="btn btn-success btn-md">Create User</a>
+        <a href="{{ url('admin/users/'.$role.'/create')}}" class="btn btn-success btn-md" id="create-form">Create User</a>
     </div>
 
     <hr>
@@ -42,14 +42,14 @@
                                 <tr>
                                     <td>{{ $user->id }}</td>
                                     <td>
-                                        <a href="{{url('/admin') }}"><img src="{{ $user->avatar }}"  class="user_avatar"></a>
+                                        <a href="{{url('/admin/users/'. $role . '/show/' . $user->id) }}"><img src="{{ $user->avatar }}"  class="user_avatar"></a>
                                     </td>
                                     <td>{{ $user->name }}</td>
                                     <td>
-                                        <a href="" class="btn btn-default btn-sm"><i class="fa fa-info-circle"></i>&nbsp;View</a>
-                                        </td>
+                                        <a href="{{url('/admin/users/'. $role . '/show/' . $user->id) }}" class="btn btn-default btn-sm"><i class="fa fa-info-circle"></i>&nbsp;View</a>
+                                    </td>
                                     <td>
-                                        <a href="" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
+                                        <a href="" class="edit btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
                                     </td>
                                     <td>
                                         <form method="POST" action="">

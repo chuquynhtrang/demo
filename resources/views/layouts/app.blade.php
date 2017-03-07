@@ -46,6 +46,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/user.js') }}"></script>
     <script src="{{ asset('js/sb-admin-2.js') }}"></script>
 </body>
 </html>

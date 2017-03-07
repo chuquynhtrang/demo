@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Course;
+use App\Models\Group;
+use App\Models\Subject;
 use App\Http\Controllers\Controller;
 use Cloudder;
 
@@ -18,13 +21,15 @@ class UserController extends Controller
 
     public function create($role)
     {
-        return view('admin.users.create', compact('role'));
+        $courses = Course::all();
+        $groups = Group::all();
+        $subjects = Subject::all();
+
+        return view('admin.users.create', compact('role', 'courses', 'groups', 'subjects'));
     }
 
     public function store(Request $request, $role)
     {
-        // dd($request->name);
-        // $request = $request->only('name', 'email', 'address', 'phone', 'course', 'group');
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
@@ -36,7 +41,14 @@ class UserController extends Controller
         $user->group_id = $request->group;
         $user->save();
 
-        return redirect('/admin/users/'. $role . 'index')->withSuccess('Create User Successfully!');
+        return redirect('/admin/users/'. $role)->withSuccess('Create User Successfully!');
+    }
+
+    public function show($role, $id)
+    {
+        $user = User::find($id);
+
+        return view('admin.users.show', compact('role', 'user'));
     }
 
     public function profile(User $user)

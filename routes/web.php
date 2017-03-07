@@ -32,6 +32,7 @@ Route::group(['middleware' => 'admin', 'prefix' => 'admin', 'namespace' => 'Admi
 	Route::get('/users/{role}', 'UserController@index');
 	Route::get('/users/{role}/create', 'UserController@create');
 	Route::post('/users/{role}/store', 'UserController@store');
+	Route::get('/users/{role}/show/{user}', 'UserController@show');
 });
 
 Route::group(['middleware' => 'staff', 'prefix' => 'staff', 'namespace' => 'Staff'], function() {

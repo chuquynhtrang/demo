@@ -14,8 +14,8 @@
 
     <div class="row">
         <div class="col-lg-6">
-            <div class="panel panel-default">
-                <div class="panel-heading table-panel">
+            <div class="form-create panel panel-default">
+                <div class="form-title panel-heading table-panel">
                     Create Subject
                 </div>
                 @include('admin.subjects._form', [
@@ -55,7 +55,7 @@
                                     <td>{{ $subject->created_at }}</td>
                                     <td>{{ $subject->updated_at }}</td>
                                     <td>
-                                        <a href="{{ url('/admin/subjects/' . $subject->id .'/edit') }}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
+                                        <a href="#" class="edit btn btn-primary btn-sm" onclick="changeForm();"><i class="fa fa-edit"></i></a>
                                     </td>
                                     <td>
                                         <form method="POST" action="{{ url('admin/subjects/' . $subject->id) }}">

@@ -16,14 +16,20 @@
 		            <div class="panel-heading table-panel">
 		                Create User
 		            </div>
-		            @if($role == 0)
-	    				@include('admin.users._form_student')
-	    			@elseif($role == 1)
-	    				@include('admin.users._form_admin')
-	    			@else
-	    				@include('admin.users_form_teacher')
-	    			@endif
-	    		</div>
+
+		    		<div class="panel-body">
+		    			<form method="POST" action="{{url('admin/users/'. $role . '/store')}}" class="form-horizontal">
+							{{csrf_field()}}
+							@if($role == 0)
+			    				@include('admin.users._form_student')
+			    			@elseif($role == 1)
+			    				@include('admin.users._form_admin')
+			    			@else
+			    				@include('admin.users_form_teacher')
+			    			@endif
+			    		</form>
+		    		</div>
+		    	</div>
 	    	</div>
     	</div>
 	</div>
