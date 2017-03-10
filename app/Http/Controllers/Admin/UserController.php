@@ -36,9 +36,11 @@ class UserController extends Controller
         $user->password = bcrypt('123456');
         $user->address = $request->address;
         $user->phone = $request->phone;
-        $user->course_id = $request->course;
+        $user->course_id = $request->course_id;
+        $user->subject_id = $request->subject_id;
+        $user->group_id = $request->group_id;
         $user->role = 0;
-        $user->group_id = $request->group;
+        $user->score = $request->score;
         $user->save();
 
         return redirect('/admin/users/'. $role)->withSuccess('Create User Successfully!');

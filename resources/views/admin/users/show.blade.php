@@ -43,6 +43,14 @@
                         <td>Group</td>
                         <td>{{ $user->group_id }}</td>
                     </tr>
+                    <tr>
+                        <td>Subject</td>
+                        <td>{{ $user->subject_id }}</td>
+                    </tr>
+                    <tr>
+                        <td>Score</td>
+                        <td>{{ $user->score }}</td>
+                    </tr>
                 </tbody>
             </table>
         </div>

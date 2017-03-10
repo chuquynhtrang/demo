@@ -55,7 +55,7 @@
                                     <td>{{ $subject->created_at }}</td>
                                     <td>{{ $subject->updated_at }}</td>
                                     <td>
-                                        <a href="#" class="edit btn btn-primary btn-sm" onclick="changeForm();"><i class="fa fa-edit"></i></a>
+                                        <a href="{{ url('/admin/subjects/' . $subject->id . '/edit') }}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
                                     </td>
                                     <td>
                                         <form method="POST" action="{{ url('admin/subjects/' . $subject->id) }}">

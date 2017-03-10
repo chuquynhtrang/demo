@@ -1,3 +1,3 @@
-function changeForm(){
-	$('.form-title').html('Edit Subject');
-}
+// function changeForm(){
+// 	$('.form-title').html('Edit Subject');
+// }
