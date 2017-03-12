@@ -49,4 +49,5 @@ Route::group(['prefix' => 'user', 'namespace' => 'User'], function() {
 
 	Route::get('/projects', 'ProjectController@index');
 	Route::get('/projects/{project}', 'ProjectController@show');
+	Route::get('/forms', 'FormController@index');
 });
