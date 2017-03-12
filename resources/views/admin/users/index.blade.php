@@ -42,7 +42,11 @@
                                 <tr>
                                     <td>{{ $user->id }}</td>
                                     <td>
-                                        <a href="{{url('/admin/users/'. $role . '/show/' . $user->id) }}"><img src="../../{{ $user->avatar }}"  class="user_avatar"></a>
+                                        @if($user->role == 1)
+                                            <a href="{{url('/admin/users/'. $role . '/show/' . $user->id) }}"><img src="{{ $user->avatar }}"  class="user_avatar"></a>
+                                        @elseif($user->role == 2)
+                                            <a href="{{url('/admin/users/'. $role . '/show/' . $user->id) }}"><img src="../../{{ $user->avatar }}"  class="user_avatar"></a>
+                                        @endif
                                     </td>
                                     <td>{{ $user->name }}</td>
                                     <td>

@@ -10,7 +10,11 @@
         <div class="col-md-4">
             <div class="col-md-2"></div>
             <div class="col-md-2" align="center">
-                <img alt="User Pic" src="../../../../{{ $user->avatar }}" id="show_avatar">
+                @if($user->role == 2)
+                    <img alt="User Pic" src="../../../../{{ $user->avatar }}" id="show_avatar">
+                @elseif($user->role ==1)
+                    <img alt="User Pic" src="{{ $user->avatar }}" id="show_avatar">
+                @endif
             </div>
         </div>
         <div class="col-md-8">
