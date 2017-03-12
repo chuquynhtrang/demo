@@ -10,49 +10,50 @@
         <div class="col-md-4">
             <div class="col-md-2"></div>
             <div class="col-md-2" align="center">
-                <img alt="User Pic" src="{{ $user->avatar }}" id="show_avatar">
+                <img alt="User Pic" src="../../../../{{ $user->avatar }}" id="show_avatar">
             </div>
         </div>
         <div class="col-md-8">
-        <h2>Infomation</h2>
-        <div class=" col-md-9 col-lg-9 ">
-            <table class="table table-user-information">
-                <tbody>
-                    <tr>
-                        <td>Name</td>
-                        <td>{{ $user->name }}</td>
-                    </tr>
-                    <tr>
-                        <td>Email</td>
-                        <td>{{ $user->email }}</td>
-                    </tr>
-                    <tr>
-                        <td>Address</td>
-                        <td>{{ $user->address }}</td>
-                    </tr>
+            <h2>Infomation</h2>
+            <div class=" col-md-9 col-lg-9 ">
+                <table class="table table-user-information">
+                    <tbody>
+                        <tr>
+                            <td>Name</td>
+                            <td>{{ $user->name }}</td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td>{{ $user->email }}</td>
+                        </tr>
+                        <tr>
+                            <td>Address</td>
+                            <td>{{ $user->address }}</td>
+                        </tr>
 
-                    <tr>
-                        <td>Phone</td>
-                        <td>{{ $user->phone }}</td>
-                    </tr>
-                    <tr>
-                        <td>Course</td>
-                        <td>{{ $user->course_id }}</td>
-                    </tr>
-                    <tr>
-                        <td>Group</td>
-                        <td>{{ $user->group_id }}</td>
-                    </tr>
-                    <tr>
-                        <td>Subject</td>
-                        <td>{{ $user->subject_id }}</td>
-                    </tr>
-                    <tr>
-                        <td>Score</td>
-                        <td>{{ $user->score }}</td>
-                    </tr>
-                </tbody>
-            </table>
+                        <tr>
+                            <td>Phone</td>
+                            <td>{{ $user->phone }}</td>
+                        </tr>
+                        <tr>
+                            <td>Course</td>
+                            <td>{{ $user->course_id }}</td>
+                        </tr>
+                        <tr>
+                            <td>Group</td>
+                            <td>{{ $user->group_id }}</td>
+                        </tr>
+                        <tr>
+                            <td>Subject</td>
+                            <td>{{ $user->subject_id }}</td>
+                        </tr>
+                        <tr>
+                            <td>Score</td>
+                            <td>{{ $user->score }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>

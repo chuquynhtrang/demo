@@ -15,24 +15,20 @@
     <div class="row">
         <div class="col-lg-6">
             <div class="form-create panel panel-default">
-                <div class="form-title panel-heading table-panel">
-                    Create Subject
-                </div>
                 @include('admin.subjects._form', [
                     'action' => url('/admin/subjects'),
                     'input' => '',
+                    'button' => 'Thêm mới',
                 ])
             </div>
         </div>
     </div>
 
-    <hr>
-
     <div class="row">
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading table-panel">
-                    Subject Tables
+                    Danh sách bộ môn
                 </div>
                 <!-- /.panel-heading -->
                 <div class="panel-body">

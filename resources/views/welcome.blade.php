@@ -51,9 +51,9 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 70px;
                 color: #fff;
-                font-weight: 700;
+                font-weight: 600;
             }
 
             .links > a {
@@ -80,22 +80,22 @@
                 <div class="top-right links">
                     @if (Auth::check())
                         @if (Auth::user()->isAdmin())
-                            <a href="{{ url('/admin') }}">Home</a>
+                            <a href="{{ url('/admin') }}">Trang chủ</a>
                         @elseif (Auth::user()->isStaff())
-                            <a href="{{ url('/staff') }}">Home</a>
+                            <a href="{{ url('/staff') }}">Trang chủ</a>
                         @else
-                            <a href="{{ url('user') }}">Home</a>
+                            <a href="{{ url('user') }}">Trang chủ</a>
                         @endif
                     @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
+                        <a href="{{ url('/login') }}">Đăng nhập</a>
+                        <a href="{{ url('/register') }}">Đăng kí</a>
                     @endif
                 </div>
             @endif
 
             <div class="content">
                 <div class="title m-b-md">
-                    Graduation Management
+                    HỆ THỐNG QUẢN LÝ ĐỒ ÁN
                 </div>
             </div>
         </div>

@@ -2,16 +2,18 @@
     <ul class="nav navbar-top-links navbar-right">
         @if (Auth::check())
             <li style="margin-right: 50px; color: #fff;">
-                Welcome, {{ Auth::user()->name }}
+                Xin chào, {{ Auth::user()->name }}
             </li>
             <li class="dropdown" id="link_profile">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                     <img src="{{Auth::user()->avatar}}" id="profile_avatar"><i class="fa fa-caret-down"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-user">
-                    <li><a href="{{ url('/admin/profile', Auth::user()->id) }}"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                    <li>
+                        <a href="{{ url('admin/profile', Auth::user()->id) }}"><i class="fa fa-user fa-fw"></i> User Profile</a>
                     </li>
-                    <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                    <li>
+                        <a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                     </li>
                     <li class="divider"></li>
                     <li>
@@ -29,10 +31,10 @@
             </li>
         @else
         <li style="margin-right: 50px; color: #fff;">
-            <a href="{{ url('/login') }}">Login</a>
+            <a class="nav-href" href="{{ url('/login') }}">ĐĂNG NHẬP</a>
         </li>
         <li style="margin-right: 50px; color: #fff;">
-            <a href="{{ url('/register') }}">Register</a>
+            <a class="nav-href" href="{{ url('/register') }}">ĐĂNG KÍ</a>
         </li>
         @endif
         <!-- /.dropdown -->

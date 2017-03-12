@@ -12,14 +12,15 @@
 </div>
 <div class="form-group">
     <label class="col-md-3 control-label" for="email">Birthday</label>
-    <div class="col-md-2">
+    <div class="col-md-3">
         <input type="date" name="email" class="form-control" required="">
     </div>
 </div>
 <div class="form-group">
-    <label class="col-md-3 control-label" for="email">Email</label>
+    <label class="col-md-3 control-label" for="email">Gender</label>
     <div class="col-md-5">
-        <input type="email" name="email" class="form-control" required="">
+        <input type="radio" name="gender" value="0" checked> Male
+  		<input type="radio" name="gender" value="1"> Female
     </div>
 </div>
 <div class="form-group">

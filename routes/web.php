@@ -29,10 +29,15 @@ Route::group(['middleware' => 'admin', 'prefix' => 'admin', 'namespace' => 'Admi
 
 	Route::resource('/councils', 'CouncilController');
 
+	Route::resource('/projects', 'ProjectController');
+
+	Route::resource('/forms', 'FormController');
+
 	Route::get('/users/{role}', 'UserController@index');
 	Route::get('/users/{role}/create', 'UserController@create');
 	Route::post('/users/{role}/store', 'UserController@store');
 	Route::get('/users/{role}/show/{user}', 'UserController@show');
+	Route::post('/projects/importExcel', 'ProjectController@importExcel');
 });
 
 Route::group(['middleware' => 'staff', 'prefix' => 'staff', 'namespace' => 'Staff'], function() {
@@ -41,4 +46,7 @@ Route::group(['middleware' => 'staff', 'prefix' => 'staff', 'namespace' => 'Staf
 
 Route::group(['prefix' => 'user', 'namespace' => 'User'], function() {
 	Route::get('/', 'UserController@index');
+
+	Route::get('/projects', 'ProjectController@index');
+	Route::get('/projects/{project}', 'ProjectController@show');
 });

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Models\Project;
 
 class User extends Authenticatable
 {
@@ -38,5 +39,10 @@ class User extends Authenticatable
     public function isStaff()
     {
         return $this->role == User::ROLE_STAFF;
+    }
+
+    public function projects()
+    {
+        return $this->hasMany(Project::class, 'id', 'teacher_id');
     }
 }

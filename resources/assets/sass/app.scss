@@ -41,3 +41,12 @@ table.dataTable thead th, table.dataTable.no-footer {
 a#create-form {
 	margin-left: 15px !important;
 }
+
+.nav li a.nav-href {
+	color: #fff !important;
+}
+
+.nav li a.nav-href:hover {
+	color: red !important;
+	background-color: #101010;
+}

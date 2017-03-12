@@ -34,13 +34,21 @@ class UserController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = bcrypt('123456');
+        $user->birthday = $request->birthday;
+        $user->gender = $request->gender;
         $user->address = $request->address;
         $user->phone = $request->phone;
-        $user->course_id = $request->course_id;
-        $user->subject_id = $request->subject_id;
-        $user->group_id = $request->group_id;
-        $user->role = 0;
-        $user->score = $request->score;
+        $user->role = $role;
+        $user->avatar = 'images/default.png';
+        if ($role == 0) {
+            $user->course_id = $request->course_id;
+            $user->subject_id = $request->subject_id;
+            $user->group_id = $request->group_id;
+            $user->score = $request->score;
+        } elseif ($role == 2) {
+            $user->position = $request->position;
+        }
+
         $user->save();
 
         return redirect('/admin/users/'. $role)->withSuccess('Create User Successfully!');
@@ -55,7 +63,7 @@ class UserController extends Controller
 
     public function profile(User $user)
     {
-    	return view('users.profile', compact('user'));
+    	return view('user.profile', compact('user'));
     }
 
     public function updateProfile(Request $request, $id)

@@ -48,6 +48,7 @@ class SubjectController extends Controller
                 'subject' => $subject,
                 'action' => url('/admin/subjects/'. $subject->id),
                 'input' => '<input name="_method" type="hidden" value="PUT">',
+                'button' => 'Cập nhật',
             ]
         );
     }

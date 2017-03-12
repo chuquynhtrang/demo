@@ -25,7 +25,6 @@
 </head>
 <body>
     <div id="app">
-        @if (Auth::user())
         <nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -34,12 +33,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="">Graduation management</a>
+                <a class="navbar-brand url-href" href="{{url('/')}}">HỆ THỐNG QUẢN LÝ ĐỒ ÁN TỐT NGHIỆP</a>
             </div>
             @include('layouts.partials.navbar')
-            @include('layouts.partials.sidebar')
+            @if (Auth::user())
+                @include('layouts.partials.sidebar')
+            @endif
         </nav>
-        @endif
 
         @yield('content')
     </div>

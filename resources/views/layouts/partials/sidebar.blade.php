@@ -17,6 +17,9 @@
                     <a href="{{ url('/admin') }}"><i class="fa fa-area-chart fa-fw"></i>&nbsp;&nbsp;Thống kê</a>
                 </li>
                 <li>
+                    <a href="#"><i class="fa fa-bars fa-fw"></i>&nbsp;&nbsp;Quản lý khóa học</a>
+                </li>
+                <li>
                     <a href="{{ url('/admin/subjects') }}"><i class="fa fa-bookmark fa-fw"></i>&nbsp;&nbsp;Quản lý bộ môn</a>
                 </li>
                 <li>
@@ -39,21 +42,30 @@
                     <!-- /.nav-second-level -->
                 </li>
                 <li>
-                    <a href="{{ url('#') }}"><i class="fa fa-book fa-fw"></i>&nbsp;&nbsp;Quản lý đề tài</a>
+                    <a href="{{ url('admin/projects') }}"><i class="fa fa-book fa-fw"></i>&nbsp;&nbsp;Quản lý đề tài</a>
                 </li>
                 <li>
-                    <a href="{{ url('/admin/councils') }}"><i class="fa fa-users fa-fw"></i>&nbsp;&nbsp;Quản lý hội đồng bảo vệ</a>
+                    <a href="{{ url('admin/forms') }}"><i class="fa fa-file-pdf-o fa-fw"></i>&nbsp;&nbsp;Quản lý biểu mẫu</a>
+                </li>
+                <li>
+                    <a href="{{ url('/admin/councils') }}"><i class="fa fa-address-card fa-fw"></i>&nbsp;&nbsp;Quản lý hội đồng bảo vệ</a>
                 </li>
             @elseif (Auth::user()->isStaff())
             @else
                 <li>
-                    <a href="{{ url('#') }}"><i class="fa fa-area-chart fa-fw"></i>&nbsp;&nbsp;Đăng kí đề tài</a>
+                    <a href="{{ url('user/projects') }}"><i class="fa fa-edit fa-fw"></i>&nbsp;&nbsp;Đăng kí đề tài</a>
                 </li>
                 <li>
-                    <a href="{{ url('#') }}"><i class="fa fa-bookmark fa-fw"></i>&nbsp;&nbsp;Danh sách sinh viên</a>
+                    <a href="{{ url('#') }}"><i class="fa fa-list-alt fa-fw"></i>&nbsp;&nbsp;Danh sách sinh viên</a>
                 </li>
                 <li>
-                    <a href="{{ url('#') }}"><i class="fa fa-building fa-fw"></i>&nbsp;&nbsp;Hội đồng bảo vệ</a>
+                    <a href="{{ url('#') }}"><i class="fa fa-address-card fa-fw"></i>&nbsp;&nbsp;Hội đồng bảo vệ</a>
+                </li>
+                <li>
+                    <a href="{{ url('#') }}"><i class="fa fa-flag fa-fw"></i>&nbsp;&nbsp;Cập nhật tiến độ</a>
+                </li>
+                <li>
+                    <a href="{{ url('#') }}"><i class="fa fa-file-pdf-o fa-fw"></i>&nbsp;&nbsp;Biểu mẫu tham khảo</a>
                 </li>
             @endif
         </ul>
