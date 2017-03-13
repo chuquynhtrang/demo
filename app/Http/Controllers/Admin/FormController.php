@@ -30,4 +30,19 @@ class FormController extends Controller
 
     	return redirect('/admin/forms')->withSuccess('Thêm biểu mẫu thành công');
     }
+
+    public function destroy($id)
+    {
+        $form = Form::find($id);
+
+        if (!$form) {
+            return redirect('/admin/form')
+                ->withErrors(['message' => 'Not found form']);
+        }
+
+        $form->delete();
+        unlink('uploads/' . $form->name);
+
+        return redirect('/admin/forms')->withSuccess('Delete Form Successfully!');
+    }
 }

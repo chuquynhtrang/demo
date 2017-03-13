@@ -52,4 +52,5 @@ Route::group(['prefix' => 'user', 'namespace' => 'User'], function() {
 	Route::get('/projects/{project}', 'ProjectController@show');
 	Route::get('/forms', 'FormController@index');
 	Route::post('/forms/upload', 'FormController@upload');
+	Route::delete('/forms/{form}', 'FormController@destroy');
 });

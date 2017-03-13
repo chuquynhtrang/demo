@@ -12,7 +12,7 @@
         @foreach($forms as $form)
             <div class="col-lg-1">
                 <div class="thumbnail">
-                    <img src="../images/document.png" alt="...">
+                    <a href="http://localhost/demo/public/uploads/{{$form->name}}" target="_blank"><img src="../images/document.png" alt="..."></a>
                     <a href="http://localhost/demo/public/uploads/{{$form->name}}" target="_blank">{{ $form->name }}</a>
                 </div>
             </div>
