@@ -14,4 +14,20 @@ class FormController extends Controller
 
     	return view('admin.forms.index', compact('forms'));
     }
+
+    public function upload(Request $request)
+    {
+    	$form = new Form();
+
+    	if($request->hasFile('form')) {
+    		$name = $request->file('form');
+    		$filename = $name->getClientOriginalName();
+    		$request->file('form')->move(base_path() . '/public/uploads/', $filename);
+    		$form->name = $filename;
+    		$form->save();
+    	}
+
+
+    	return redirect('/admin/forms')->withSuccess('Thêm biểu mẫu thành công');
+    }
 }
