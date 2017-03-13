@@ -24,7 +24,7 @@
     <hr>
     <div class="row">
         @foreach($forms as $form)
-            <div class="col-lg-1">
+            <div class="col-lg-2">
                 <form method="POST" action="{{ url('admin/forms/' . $form->id) }}">
                     {{csrf_field()}}
                     <input name="_method" type="hidden" value="DELETE">

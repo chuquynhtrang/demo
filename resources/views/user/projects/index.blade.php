@@ -9,8 +9,17 @@
         <!-- /.col-lg-12 -->
     </div>
 
+    @include('layouts.partials.errors')
+    @include('layouts.partials.success')
+
     <div class="row">
         <div class="col-lg-12">
+            @if($check)
+                <div class="alert alert-danger">
+                    Bạn đã đăng kí đề tài. 
+                    <a href="{{url('user/projects/'. $user[0]->project_id)}}">Click để xem</a>
+                </div>
+            @endif
             <div class="panel panel-default">
                 <!-- /.panel-heading -->
                 <div class="panel-body">
