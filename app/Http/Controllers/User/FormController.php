@@ -12,7 +12,7 @@ class FormController extends Controller
     {
     	$forms = Form::all();
 
-    	return view('admin.forms.index', compact('forms'));
+    	return view('user.forms.index', compact('forms'));
     }
 
     public function upload(Request $request)

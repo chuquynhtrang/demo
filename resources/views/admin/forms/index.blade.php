@@ -24,9 +24,9 @@
     <hr>
     <div class="row">
         @foreach($forms as $form)
-            <div class="col-lg-2">
+            <div class="col-lg-1">
                 <div class="thumbnail">
-                    <img src="http://www.freeiconspng.com/uploads/pdf-icon-png-17.png" alt="...">
+                    <img src="../images/document.png" alt="...">
                     <a href="http://localhost/demo/public/uploads/{{$form->name}}" target="_blank">{{ $form->name }}</a>
                 </div>
             </div>
