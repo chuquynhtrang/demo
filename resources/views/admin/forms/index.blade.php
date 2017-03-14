@@ -23,23 +23,31 @@
     </form>
     <hr>
     <div class="row">
-        @foreach($forms as $form)
-            <div class="col-lg-2">
-                <form method="POST" action="{{ url('admin/forms/' . $form->id) }}">
-                    {{csrf_field()}}
-                    <input name="_method" type="hidden" value="DELETE">
-                    <button type="submit" onclick="return confirm('Are you sure delete?')" class="delete-form">
-                        <img src="../images/x.png" alt="..." class="button-delete">
-                    </button>
-                    <div class="thumbnail">
+        <div class="col-lg-12">
+            <div class="col-lg-4">
+                <h4>Tên file</h4>
+                <ul style="list-style-type:none">
+                @foreach($forms as $form)
+                    <li>
                         <a href="http://localhost/demo/public/uploads/{{$form->name}}" target="_blank">
                             <img src="../images/document.png" alt="..." class="form-image">
                         </a>
                         <a href="http://localhost/demo/public/uploads/{{$form->name}}" target="_blank" class="form-text">{{ $form->name }}</a>
-                    </div>
-                </form>
+                    </li>
+                @endforeach
+                </ul>
             </div>
-        @endforeach
+            <div class="col-lg-3">
+                <h4>Ngày tạo</h4>
+                <ul style="list-style-type:none">
+                @foreach($forms as $form)
+                    <li style="height: 30px;">
+                        {{$form->created_at}}
+                    </li>
+                @endforeach
+                </ul>
+            </div>
+        </div>
     </div>
 </div>
 @endsection

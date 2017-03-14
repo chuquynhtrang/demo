@@ -13,6 +13,7 @@ class ProjectController extends Controller
     public function index()
     {
         $check = false;
+
     	$projects = Project::all();
         $user = UserProject::where('user_id', Auth::user()->id)->get();
         if ($user->count()) {

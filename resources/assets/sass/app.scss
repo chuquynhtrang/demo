@@ -65,14 +65,8 @@ a#create-form {
     transition: all 1s ease;
 }
 
-.form-text{
-   	white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display:block;
-}
-
 .form-image {
+	height: 30px;
 	-webkit-transition: all 1s ease; /* Safari and Chrome */
     transition: all 1s ease;
 }
