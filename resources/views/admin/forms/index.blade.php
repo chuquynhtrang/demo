@@ -23,30 +23,32 @@
     </form>
     <hr>
     <div class="row">
-        <div class="col-lg-12">
-            <div class="col-lg-4">
-                <h4>Tên file</h4>
-                <ul style="list-style-type:none">
-                @foreach($forms as $form)
-                    <li>
-                        <a href="http://localhost/demo/public/uploads/{{$form->name}}" target="_blank">
-                            <img src="../images/document.png" alt="..." class="form-image">
-                        </a>
-                        <a href="http://localhost/demo/public/uploads/{{$form->name}}" target="_blank" class="form-text">{{ $form->name }}</a>
-                    </li>
-                @endforeach
-                </ul>
+        <div class="panel panel-default">
+                <!-- /.panel-heading -->
+            <div class="panel-body">
+                <table width="100%" class="table table-striped table-hover" id="dataTables">
+                    <thead>
+                        <tr>
+                            <th>Tên biểu mẫu</th>
+                            <th>Ngày tạo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($forms as $form)
+                            <tr>
+                                <td>
+                                    <a href="http://localhost/demo/public/uploads/{{$form->name}}" target="_blank">
+                                        <img src="../images/document.png" alt="..." class="form-image">
+                                    </a>
+                                    <a href="http://localhost/demo/public/uploads/{{$form->name}}" target="_blank" class="form-text">{{ $form->name }}</a>
+                                </td>
+                                <td>{{ $form->created_at }}</td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
-            <div class="col-lg-3">
-                <h4>Ngày tạo</h4>
-                <ul style="list-style-type:none">
-                @foreach($forms as $form)
-                    <li style="height: 30px;">
-                        {{$form->created_at}}
-                    </li>
-                @endforeach
-                </ul>
-            </div>
+                <!-- /.panel-body -->
         </div>
     </div>
 </div>

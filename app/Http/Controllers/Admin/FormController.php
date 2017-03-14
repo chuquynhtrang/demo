@@ -10,7 +10,7 @@ class FormController extends Controller
 {
     public function index()
     {
-    	$forms = Form::orderBy('id', 'desc')->get();
+    	$forms = Form::all();
 
     	return view('admin.forms.index', compact('forms'));
     }
