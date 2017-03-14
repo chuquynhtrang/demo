@@ -12,7 +12,7 @@
         <div class="panel panel-default">
                 <!-- /.panel-heading -->
             <div class="panel-body">
-                <table width="100%" class="table table-striped table-hover" id="dataTables">
+                <table width="100%" class="table-form table-striped table-hover" id="dataTables">
                     <thead>
                         <tr>
                             <th>Tên biểu mẫu</th>
